@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>BeeНавигатор</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <title>Hospital</title>
+</head>
+<body>
+
+<div class="container mt-5">
+  <span class="navbar-text ml-2 pt-5">
+    Задание 1
+  </span>
+<form class="form-inline" method="get" action="/main">
+    <input class="form-control ml-2 mb-4" type="text" name="filter_hospital_id" placeholder="Hospital_id" value="{{#filter_hospital_id}}{{filter_hospital_id}}{{/filter_hospital_id}}" >
+    <button type="submit" class="btn btn-outline-dark ml-2 mb-4">Найти</button>
+</form>
+
+<table class="table table-striped" border="1" cellpadding="5">
+    <thead class="thead-dark">
+
+    <th scope="col" >Hospital_id</th>
+    <th scope="col">Hospital_name</th>
+    <th scope="col">Bed_count</th>
+
+
+    </thead>
+    {{#hospital}}
+        <div> <!-- -->
+            <tr>
+
+                <th>{{#id}}{{id}}{{/id}}</th>
+                <th>{{#hospital_name}}{{hospital_name}}{{/hospital_name}}</th>
+                <th>{{#bed_count}}{{bed_count}}{{/bed_count}}</th>
+
+
+            </tr>
+        </div>
+    {{/hospital}}
+</table>
+</div>
+
+<div class="container mt-5">
+  <span class="navbar-text ml-2 pt-5">
+    Experience
+  </span>
+    <form class="form-inline" method="get" action="/doctor">
+        <input class="form-control ml-2 mb-4" type="text" name="filter_doctor" placeholder="DoctorId" value="{{#filter_doctor}}{{filter_doctor}}{{/filter_doctor}}" >
+        <button type="submit" class="btn btn-outline-dark ml-2 mb-4">Найти</button>
+    </form>
+
+    <table class="table table-striped" border="1" cellpadding="5">
+        <thead class="thead-dark">
+
+        <th scope="col" >DoctorId</th>
+        <th scope="col">Doctor_name</th>
+        <th scope="col">Joining_date</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Experience</th>
+
+
+        </thead>
+        {{#doctor}}
+            <div> <!-- -->
+                <tr>
+
+                    <th>{{#doctor}}{{doctor}}{{/doctor}}</th>
+                    <th>{{#doctor_name}}{{doctor_name}}{{/doctor_name}}</th>
+                    <th>{{#joining_date}}{{joining_date}}{{/joining_date}}</th>
+                    <th>{{#salary}}{{salary}}{{/salary}}</th>
+                    <th>{{#experience}}{{experience}}{{/experience}}</th>
+
+
+                </tr>
+            </div>
+        {{/doctor}}
+    </table>
+</div>
+
+</body>
+</html>
